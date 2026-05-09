@@ -17,6 +17,9 @@ return new class extends Migration
             $table->integer('total_price');
             $table->enum('payment_status', ['pending', 'paid', 'canceled', 'completed'])->default('pending');
             $table->string('payment_proof')->nullable();
+            
+            $table->timestamp('expired_at')->nullable(); 
+            
             $table->timestamps();
         });
     }
